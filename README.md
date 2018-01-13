@@ -6,6 +6,6 @@
 
 (get) builds                       - Список билдов
 
-(get) builds/{номер}               - Информация по билду
+(get) builds/:buildId              - Информация по билду
 
-(post) builds/{номер}/deploy/{хост} - Деплой пакета на хост
+(post) builds/:buildId/deploy/:hostName - Деплой пакета на хост
