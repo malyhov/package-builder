@@ -18,7 +18,8 @@ let log4js = require('log4js');
 let logger = log4js.getLogger();
 logger.level = 'off';
 
-
+// TODO: Вынести работу с БД в отдельный хелпер, а со временем перейти на Sequilize
+// TODO: Запуск скриптов вынести в отдельный хелпер и запускать через await
 router.get('/create', function (req, res) {
   let build_id;
   con.query("select number from builds order by number desc limit 1", function(err, result, fields) {
