@@ -39,22 +39,22 @@ router.get('/create', function (req, res) {
 });
 
 router.route('/').get(function(req, res) {
-    con.query("SELECT * FROM builds", function (err, result, fields) {
-      if (err) throw err;
-      res.json(result);
-    });
+  con.query("SELECT * FROM builds", function (err, result, fields) {
+    if (err) throw err;
+    res.json(result);
+  });
 });
 
 router.route('/:build_id/deploy').post(function (req, res) {
-    let build_id = req.params.build_id;
-    let host = req.params.host;
-    console.log('Deploy package ' + build_id + ' on ', host);
-    // TODO: Запуск плейбука для деплоя
-    child = exec("vmstat 5 5", function (err, stdout, stderr) {
-      logger.debug('stdout: ' + stdout);
-      logger.debug('stderr: ' + stderr);
-      if (err !== null) console.log('exec error: ' + err);
-    });
+  let build_id = req.params.build_id;
+  let host = req.params.host;
+  console.log('Deploy package ' + build_id + ' on ', host);
+  // TODO: Запуск плейбука для деплоя
+  child = exec("vmstat 5 5", function (err, stdout, stderr) {
+    logger.debug('stdout: ' + stdout);
+    logger.debug('stderr: ' + stderr);
+    if (err !== null) console.log('exec error: ' + err);
+  });
 });
 
 router.route('/:build_id').get(function(req, res) {
@@ -63,7 +63,7 @@ router.route('/:build_id').get(function(req, res) {
     if (err) throw err;
     if (result == 0) res.status(404);
     res.json(result);
-    });
+  });
 });
 
 
