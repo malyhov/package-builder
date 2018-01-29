@@ -1,8 +1,9 @@
 .idea/
-*.sql
-node_modules/
-.env
-npm-debug.log
 .nyc_output/
 coverage/
+node_modules/
+*.log
+*.sql
+.env
+npm-debug.log
 package-lock.json

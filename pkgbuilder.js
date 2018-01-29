@@ -1,13 +1,13 @@
-var express = require('express');
-var index = require('./routes/index');
-var builds = require('./routes/builds');
-var hosts = require('./routes/hosts');
-var app = express();
-var bodyParser = require('body-parser');
+const express = require('express');
+const index = require('./routes/index');
+const builds = require('./routes/builds');
+const hosts = require('./routes/hosts');
+const app = express();
+const bodyParser = require('body-parser');
 
-var env = require('node-env-file');
+const env = require('node-env-file');
 env(__dirname + '/.env');
-var port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
